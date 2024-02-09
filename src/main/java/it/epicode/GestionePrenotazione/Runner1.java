@@ -3,6 +3,7 @@ import it.epicode.GestionePrenotazione.bean.Edificio;
 import it.epicode.GestionePrenotazione.bean.Postazione;
 import it.epicode.GestionePrenotazione.bean.Prenotazione;
 import it.epicode.GestionePrenotazione.bean.Utente;
+import it.epicode.GestionePrenotazione.enums.TipoPostazione;
 import it.epicode.GestionePrenotazione.service.EdificioService;
 import it.epicode.GestionePrenotazione.service.PostazioneService;
 import it.epicode.GestionePrenotazione.service.PrenotazioneService;
@@ -46,7 +47,7 @@ public class Runner1 implements CommandLineRunner {
 //
 //        Edificio edificio = new Edificio();
 //        edificio.setNome("Edificio1");
-//        edificio.setCitta("Città1");
+//        edificio.setCitta("Roma");
 //        edificio.setIndirizzo("Indirizzo1");
 //        edificioService.salvaEdificio(edificio);
 //
@@ -54,6 +55,8 @@ public class Runner1 implements CommandLineRunner {
 //        Postazione postazione = new Postazione();
 //        postazione.setDescrizione("Postazione1");
 //        postazione.setEdificio(edificio);
+//        postazione.setNumeroMassimoOccupanti(100);
+//        postazione.setTipo(TipoPostazione.PRIVATO);
 //        postazioneService.salvaPostazione(postazione);
 //
 //        // Creazione di una prenotazione per l'utente u2 nella postazione creata
@@ -82,6 +85,7 @@ public class Runner1 implements CommandLineRunner {
         //edificioService.eliminaEdificio(1);
 
 
+        System.out.println(postazioneService.cercaPostazionePerTipoECitta(TipoPostazione.PRIVATO, "Roma"));
         logger.info("Metodo run completato.");
     }
 
