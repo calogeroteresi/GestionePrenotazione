@@ -30,7 +30,7 @@ public class PrenotazioneService {
         }
     }
 
-    public void aggiornaPrenotazione(Optional<Edificio> prenotazione) {
+    public void aggiornaPrenotazione(Prenotazione prenotazione) {
         try {
             Prenotazione p = prenotazioneRepository.findById(prenotazione.getId()).orElseThrow(() -> new IllegalArgumentException("Prenotazione non trovata per l'ID: " + prenotazione.getId()));
             p.setDataPrenotazione(prenotazione.getDataPrenotazione());

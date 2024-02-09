@@ -70,7 +70,7 @@ public class Runner1 implements CommandLineRunner {
         Optional<Edificio> edificio1 = edificioService.cercaEdificioPerId(1);
         edificio1.ifPresent(edificio -> {
             edificio.setNome("Nuovo Nome Edificio");
-            edificioService.salvaEdificio(edificio);
+            edificioService.aggiornaEdificio(edificio);
         });
 
         Optional<Postazione> postazione1 = postazioneService.cercaPostazionePerId(1);
@@ -78,7 +78,6 @@ public class Runner1 implements CommandLineRunner {
         Prenotazione prenotazione1 = prenotazioneService.cercaPrenotazionePerId(1);
 
 
-        prenotazioneService.aggiornaPrenotazione(edificio1);
         //prenotazioneService.eliminaPrenotazione(1);
         //utenteService.eliminaUtente(1);
         //edificioService.eliminaEdificio(1);

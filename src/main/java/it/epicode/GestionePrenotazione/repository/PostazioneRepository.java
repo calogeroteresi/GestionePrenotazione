@@ -21,4 +21,5 @@ public interface PostazioneRepository  extends JpaRepository<Postazione, Integer
 
 
 
+
 }
